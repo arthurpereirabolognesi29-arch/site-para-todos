@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Site Acessível</title>
+
+<style>
+body {
+    font-family: Arial;
+    transition: 0.3s;
+}
+
+.acessibilidade {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+button {
+    margin: 5px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* modo alto contraste */
+.contraste {
+    background: black;
+    color: yellow;
+}
+
+/* assinatura */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="acessibilidade">
+    <button onclick="aumentarTexto()">A+</button>
+    <button onclick="diminuirTexto()">A-</button>
+    <button onclick="contraste()">🌙 Contraste</button>
+    <button onclick="lerTexto()">🔊 Ouvir</button>
+    <button onclick="traduzir()">🌍 Traduzir</button>
+</div>
+
+<h1 id="conteudo">Bem-vindo ao site acessível!</h1>
+<p>Esse site foi feito para ajudar pessoas com deficiência visual, auditiva e estrangeiros.</p>
+
+<video width="300" controls>
+    <source src="video.mp4" type="video/mp4">
+    <track src="legenda.vtt" kind="subtitles" srclang="pt" label="Português">
+</video>
+
+<footer>
+    Criado por <strong>Arthur Pereira Bolognesi</strong> | Criador Principal 🚀
+</footer>
+
+<script>
+let tamanho = 16;
+
+function aumentarTexto() {
+    tamanho += 2;
+    document.body.style.fontSize = tamanho + "px";
+}
+
+function diminuirTexto() {
+    tamanho -= 2;
+    document.body.style.fontSize = tamanho + "px";
+}
+
+function contraste() {
+    document.body.classList.toggle("contraste");
+}
+
+function lerTexto() {
+    let texto = document.getElementById("conteudo").innerText;
+    let fala = new SpeechSynthesisUtterance(texto);
+    speechSynthesis.speak(fala);
+}
+
+function traduzir() {
+    let texto = document.getElementById("conteudo");
+    if (texto.innerText === "Bem-vindo ao site acessível!") {
+        texto.innerText = "Welcome to the accessible website!";
+    } else {
+        texto.innerText = "Bem-vindo ao site acessível!";
+    }
+}
+</script>
+
+</body>
+</html>
