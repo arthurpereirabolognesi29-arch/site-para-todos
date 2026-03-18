@@ -1,0 +1,50 @@
+/* Reset básico */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 18px; /* tamanho confortável */
+    line-height: 1.6; /* espaçamento entre linhas */
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Links visíveis */
+a {
+    color: #005fcc;
+    text-decoration: underline;
+}
+
+a:focus, button:focus {
+    outline: 3px solid #ffcc00; /* destaque ao navegar com TAB */
+}
+
+/* Botões acessíveis */
+button {
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    background-color: #005fcc;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003f8a;
+}
+
+/* Alto contraste */
+.alto-contraste {
+    background-color: #000000;
+    color: #ffff00;
+}
+
+/* Melhor leitura para dislexia */
+p {
+    max-width: 700px;
+}
+
+/* Espaçamento entre elementos */
+h1, h2, h3, p {
+    margin-bottom: 15px;
+}
